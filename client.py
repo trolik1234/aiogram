@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-API_URL = os.getenv("API_URL")
+API_URL = os.getenv("API_URL").rstrip('/')
 
 async def register_user(name, email) -> bool:
     async with httpx.AsyncClient() as client:
